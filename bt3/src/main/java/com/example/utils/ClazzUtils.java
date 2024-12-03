@@ -1,43 +1,73 @@
 package com.example.utils;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.IOException;
 import java.lang.reflect.Field;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Stack;
-import java.util.stream.Collectors;
 
+import com.example.Main;
 import com.example.annotations.Inject;
 
 public class ClazzUtils {
     public static List<Class<?>> findAllClasses(Class<?> application) {
         String packageName = application.getPackageName();
-
-        InputStream stream = application.getClassLoader()
-                .getResourceAsStream(packageName.replaceAll("[.]", "/"));
-        assert stream != null;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-
-        return reader.lines()
-                .filter(line -> line.endsWith(".class"))
-                .map(line -> line.replaceAll(".class", ""))
-                .map((className) -> {
-                    try {
-                        return Class.forName(packageName + "." + className);
-                    } catch (ClassNotFoundException e) {
-                        return null;
-                    }
-                })
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+        List<Class<?>> clazzList = new ArrayList<>();
+        try {
+            clazzList = findClassesInPackage(packageName);
+            return clazzList;
+        } catch (Exception e) {
+            e.printStackTrace();    
+        }
+        return clazzList;
     }
 
-     public static <T> void injectObjectToProperty(Class<?> clazz, Map<Class<?>, Object> contextObject)
+    public static List<Class<?>> findClassesInPackage(String packageName) throws ClassNotFoundException, IOException {
+        ClassLoader classLoader = Main.class.getClassLoader(); // Use Main's ClassLoader
+        String path = packageName.replace('.', '/');
+        Enumeration<URL> resources = classLoader.getResources(path);
+        List<File> directories = new ArrayList<>();
+
+        // Collect all directories (resources) for the given package
+        while (resources.hasMoreElements()) {
+            URL resource = resources.nextElement();
+            directories.add(new File(resource.getFile()));
+        }
+
+        List<Class<?>> classes = new ArrayList<>();
+        for (File directory : directories) {
+            classes.addAll(findClasses(directory, packageName));
+        }
+        return classes;
+    }
+
+    private static List<Class<?>> findClasses(File directory, String packageName) throws ClassNotFoundException {
+        List<Class<?>> classes = new ArrayList<>();
+        if (!directory.exists()) {
+            return classes;
+        }
+
+        File[] files = directory.listFiles();
+        if (files == null) {
+            return classes;
+        }
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                classes.addAll(findClasses(file, packageName + "." + file.getName()));
+            } else if (file.getName().endsWith(".class")) {
+                String className = packageName + '.' + file.getName().replace(".class", "");
+                classes.add(Class.forName(className));
+            }
+        }
+        return classes;
+    }
+
+    public static <T> void injectObjectToProperty(Class<?> clazz, Map<Class<?>, Object> contextObject)
             throws IllegalAccessException {
         Object object = contextObject.get(clazz);
         for (Field field : clazz.getDeclaredFields()) {
