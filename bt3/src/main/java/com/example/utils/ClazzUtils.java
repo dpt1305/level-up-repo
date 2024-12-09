@@ -67,14 +67,14 @@ public class ClazzUtils {
         return classes;
     }
 
-    public static <T> void injectObjectToProperty(Class<?> clazz, Map<Class<?>, Object> contextObject)
+    public static <T> void injectObjectToProperty(Class<?> clazz, Map<String, Object> contextObject)
             throws IllegalAccessException {
-        Object object = contextObject.get(clazz);
+        Object object = contextObject.get(clazz.getName());
         for (Field field : clazz.getDeclaredFields()) {
             if (field.isAnnotationPresent(Inject.class)) {
                 field.setAccessible(true);
                 Class<?> propertyClazz = field.getType();
-                field.set(object, contextObject.get(propertyClazz));
+                field.set(object, contextObject.get(propertyClazz.getName()));
             }
         }
     }
