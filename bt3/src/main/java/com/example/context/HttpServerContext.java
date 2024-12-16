@@ -14,7 +14,6 @@ import java.net.InetSocketAddress;
 
 public class HttpServerContext {
     private static HttpServer server ;
-    private static final String hostname = "localhost";
     private static String port = null;
 
     public static void initHttpServer() throws IOException {
