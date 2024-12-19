@@ -2,7 +2,6 @@ package org.demo;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class Main {
     public static final Integer MAX_NUMBER = 1000;
