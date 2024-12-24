@@ -22,13 +22,11 @@ public class ThreadCalculateUnsafe {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         System.out.println("end: " + x);
     }
-
-
 }
- class RunnerAdd implements Runnable {
+
+class RunnerAdd implements Runnable {
     public RunnerAdd() {
     }
 
@@ -39,7 +37,8 @@ public class ThreadCalculateUnsafe {
         }
     }
 }
- class RunnerSub implements Runnable {
+
+class RunnerSub implements Runnable {
     public RunnerSub() {
     }
 
