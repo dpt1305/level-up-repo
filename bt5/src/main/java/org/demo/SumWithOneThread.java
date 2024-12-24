@@ -3,6 +3,7 @@ package org.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SumWithOneThread {
     private static final Integer ARRAY_LENGTH = 10000000;
     public static void main(String[] args) {
