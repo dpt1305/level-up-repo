@@ -7,7 +7,7 @@ public class SyncFuncGood {
     public static int shareResource = 0;
 
     public static void main(String[] args) {
-        ExecutorService pool = Executors.newFixedThreadPool(1000);
+        ExecutorService pool = Executors.newFixedThreadPool(100);
 
         RunnerAdd1 runner = new RunnerAdd1();
 
@@ -26,7 +26,15 @@ class RunnerAdd1 implements Runnable {
     @Override
     public synchronized void run() {
         for (int index = 0; index < 10; index++) {
-            SyncFuncGood.shareResource++ ;            
+            SyncFuncGood.shareResource++ ;
+
+//            try {
+//                SyncFuncGood.shareResource++ ;
+//
+//                Thread.sleep(2);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         }
     }
     
