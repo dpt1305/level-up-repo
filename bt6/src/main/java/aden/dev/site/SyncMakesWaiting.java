@@ -12,31 +12,21 @@ public class SyncMakesWaiting {
         for (int i = 0; i < 10; i++) {
             threads.add(new Thread(runner));
         }
-
-
         for (Thread thread : threads) {
             thread.start();
         }
-
-//        System.out.println(new Date().toString());;
-
-
     }
 }
 class Runner implements Runnable {
-
     @Override
     public void run() {
         synchronized (this) {
-
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
         }
         System.out.println(new Date().toString());;
-//        System.out.println("after sleep");
     }
 }
