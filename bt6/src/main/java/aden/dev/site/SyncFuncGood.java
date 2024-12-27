@@ -1,5 +1,7 @@
 package aden.dev.site;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -10,31 +12,34 @@ public class SyncFuncGood {
         ExecutorService pool = Executors.newFixedThreadPool(100);
 
         RunnerAdd1 runner = new RunnerAdd1();
+        List<Thread> listThread = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
-            pool.execute(runner);
+        for(int i = 0; i < 100; i++) {
+            Thread t = new Thread(runner);
+            listThread.add(t);
         }
-        pool.shutdown();
 
-        if(pool.isShutdown()) {
-            System.out.println("Final value: " + SyncFuncGood.shareResource);
+        for(Thread t : listThread) {
+            t.start();
         }
+
+        for(Thread t : listThread) {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        System.out.println("Final value: " + SyncFuncGood.shareResource);
     }
 }
 class RunnerAdd1 implements Runnable {
 
     @Override
     public synchronized void run() {
-        for (int index = 0; index < 10; index++) {
+        for (int index = 0; index < 10000; index++) {
             SyncFuncGood.shareResource++ ;
-
-//            try {
-//                SyncFuncGood.shareResource++ ;
-//
-//                Thread.sleep(2);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
         }
     }
     
