@@ -9,8 +9,6 @@ public class SyncFuncGood {
     public static int shareResource = 0;
 
     public static void main(String[] args) {
-        ExecutorService pool = Executors.newFixedThreadPool(100);
-
         RunnerAdd1 runner = new RunnerAdd1();
         List<Thread> listThread = new ArrayList<>();
 
