@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReadRunner implements Runnable{
-    private ReentrantReadWriteLock lock;
+    private final ReentrantReadWriteLock lock;
 
     public ReadRunner(ReentrantReadWriteLock lock) {
         this.lock = lock;
