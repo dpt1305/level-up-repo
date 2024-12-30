@@ -24,22 +24,5 @@ public class ReadRunner implements Runnable{
         } finally {
             lock.readLock().unlock();
         }
-//        try {
-//            if(lock.readLock().tryLock(1000, TimeUnit.MILLISECONDS)) {
-//                System.out.println(ReadWriteUnsafe.sharedResource);
-//                try {
-//                    Thread.sleep(1000);
-//                    lock.readLock().
-//                    lock.readLock().unlock();
-//                } catch (InterruptedException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        lock.readLock().lock();
-
-
     }
 }
