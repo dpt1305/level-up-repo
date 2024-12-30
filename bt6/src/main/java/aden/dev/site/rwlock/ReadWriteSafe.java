@@ -18,16 +18,6 @@ public class ReadWriteSafe {
     public void run() {
         init();
 
-        // Write data
-//        for (Thread thread : threadWritingList) {
-//            thread.start();
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-
         int i = 0;
         while(i<999) {
             threadReadingList.get(i).start();
@@ -36,13 +26,6 @@ public class ReadWriteSafe {
                 threadWritingList.get(i).start();
             }
         }
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-
-
     }
 
     private void init() {

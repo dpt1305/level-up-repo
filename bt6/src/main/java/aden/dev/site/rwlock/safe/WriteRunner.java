@@ -1,5 +1,6 @@
 package aden.dev.site.rwlock.safe;
 
+import aden.dev.site.rwlock.ReadWriteSafe;
 import aden.dev.site.rwlock.ReadWriteUnsafe;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -17,7 +18,7 @@ public class WriteRunner implements Runnable{
         lock.writeLock().lock();
         System.out.println("Start writing");
         for (int i = 0; i < 10; i++) {
-            ReadWriteUnsafe.sharedResource++;
+            ReadWriteSafe.sharedResource++;
             try {
                 Thread.sleep(250);
             } catch (InterruptedException e) {
