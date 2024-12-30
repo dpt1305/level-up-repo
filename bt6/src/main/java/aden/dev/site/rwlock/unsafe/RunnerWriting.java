@@ -1,4 +1,6 @@
-package aden.dev.site.rwlock;
+package aden.dev.site.rwlock.unsafe;
+
+import aden.dev.site.rwlock.ReadWriteUnsafe;
 
 public class RunnerWriting implements Runnable {
     @Override

@@ -1,6 +1,16 @@
-package aden.dev.site.rwlock;
+package aden.dev.site.rwlock.unsafe;
+
+import aden.dev.site.rwlock.ReadWriteUnsafe;
+
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class RunnerReading implements Runnable {
+    private ReentrantReadWriteLock lock;
+
+    public RunnerReading() {}
+    public RunnerReading(ReentrantReadWriteLock lock) {
+        this.lock = lock;
+    }
 
     @Override
     public void run() {
