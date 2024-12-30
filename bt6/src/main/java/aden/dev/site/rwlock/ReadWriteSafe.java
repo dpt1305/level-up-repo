@@ -2,11 +2,13 @@ package aden.dev.site.rwlock;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class ReadWriteUnsafe {
+public class ReadWriteSafe {
     public static int sharedResource = 0;
     private List<Thread> threadReadingList = new ArrayList<>();
     private List<Thread> threadWritingList = new ArrayList<>();
+//    private ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
     public void run() {
         init();
@@ -23,14 +25,14 @@ public class ReadWriteUnsafe {
         }
 
         // Write data
-       for (Thread thread : threadWritingList) {
-           thread.start();
-           try {
-               Thread.sleep(8000);
-           } catch (InterruptedException e) {
-               throw new RuntimeException(e);
-           }
-       }
+        for (Thread thread : threadWritingList) {
+            thread.start();
+            try {
+                Thread.sleep(8000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     private void init() {
@@ -45,4 +47,3 @@ public class ReadWriteUnsafe {
         }
     }
 }
-
