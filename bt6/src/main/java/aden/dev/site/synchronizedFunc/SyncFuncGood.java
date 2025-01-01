@@ -1,9 +1,7 @@
-package aden.dev.site;
+package aden.dev.site.synchronizedFunc;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class SyncFuncGood {
     public static int shareResource = 0;

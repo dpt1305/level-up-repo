@@ -1,4 +1,4 @@
-package aden.dev.site;
+package aden.dev.site.synchronizedFunc;
 
 public class SynchronizedFuncNotGood {
     public static int x = 0;
