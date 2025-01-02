@@ -24,16 +24,16 @@ public class ReentrantLockDemo {
 class Runner2 implements Runnable {
     @Override
     public void run() {
-        if (
-                ReentrantLockDemo.lock.tryLock()
-        ) {
+        if (ReentrantLockDemo.lock.tryLock()) {
             try {
                 System.out.println("Inside the lock");
-                Thread.sleep(1000);
+                Thread.sleep(15000);
+                ReentrantLockDemo.lock.unlock();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        }
+        } 
         System.out.println("Outside the lock");
+        
     }
 }

@@ -21,12 +21,15 @@ class Runner implements Runnable {
     @Override
     public void run() {
         synchronized (this) {
+            System.out.println("inside lock");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println(new Date().toString());;
+        System.out.println(new Date().toString());
+
+        
     }
 }
