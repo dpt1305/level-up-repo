@@ -9,6 +9,7 @@ public class MainFunc {
 //        // Safe demo
        ReadWriteSafe readWriteSafe = new ReadWriteSafe();
        readWriteSafe.run();
+       // Should change to using synchronize inside of sharingResource(get, set)
 
         // 2 thread read with reentrant lock
         // Read2Threads read2Threads = new Read2Threads();
