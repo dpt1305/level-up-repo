@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*
 Write test before implements, according to TDD pattern.
  */
+/*
+BT bo sung: JPA, EsclipseLink and Hibernate => see the effect of interface
+ */
 @SpringBootApplication
 public class Bt8Application {
 
