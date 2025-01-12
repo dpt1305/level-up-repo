@@ -1,10 +1,6 @@
 package aden.dev.site.rwlock.safe;
 
 import aden.dev.site.rwlock.ReadWriteSafe;
-import aden.dev.site.rwlock.ReadWriteUnsafe;
-
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReadRunner implements Runnable{
@@ -15,7 +11,7 @@ public class ReadRunner implements Runnable{
     }
 
     @Override
-    public synchronized void run() {
+    public void run() {
         try {
             lock.readLock().lock();
             System.out.println("safe " + ReadWriteSafe.sharedResource);
