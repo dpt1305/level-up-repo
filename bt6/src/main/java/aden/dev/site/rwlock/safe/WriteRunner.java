@@ -1,9 +1,8 @@
 package aden.dev.site.rwlock.safe;
 
-import aden.dev.site.rwlock.ReadWriteSafe;
-import aden.dev.site.rwlock.ReadWriteUnsafe;
-
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+import aden.dev.site.rwlock.ReadWriteSafe;
 
 public class WriteRunner implements Runnable{
 
