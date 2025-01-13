@@ -11,8 +11,10 @@ public class Main {
 
         // 2. Subarray Sum
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        int k = 5;
+        int k = 3;
         int start = 1;
         SubarraySum.findSubarraySums(arr, k, start);
+        SubarraySum.findAllSubarraySums(arr, k);
+
     }
 }
