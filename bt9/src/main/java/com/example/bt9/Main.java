@@ -1,10 +1,22 @@
 package com.example.bt9;
 
-import java.util.Objects;
+// import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Find seond max value 
+        int[] arr = {12, 35, 1, 10, 34, 1};
+
+        // 1. Print index and value
+        // PrintValuesInArray.printIndexValue(arr);
+
+        // 2. Print even-indexed values
+        // PrintValuesInArray.printEvenIndexedValues(arr);
+
+        // 3. Find max value
+        // int maxValue = PrintValuesInArray.findMaxValue(arr);
+        // System.out.println("Max value: " + maxValue);
+
+        // 4. Find seond max value 
         // int[] arr = {12, 35, 1, 10, 34, 1};
         // int maxIndex = 1;  // index of 35, which is the maximum value
         
@@ -19,8 +31,8 @@ public class Main {
         // SubarraySum.findAllSubarraySums(arr, k);
 
         // 3. Hashcode of integer
-        Integer a = 2;
-        System.out.println( Objects.hash(a));
+        // Integer a = 2;
+        // System.out.println( Objects.hash(a));
 
     }
 }
