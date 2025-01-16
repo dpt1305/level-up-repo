@@ -10,7 +10,7 @@ public class Main {
         // PrintValuesInArray.printIndexValue(arr);
 
         // 2. Print even-indexed values
-        // PrintValuesInArray.printEvenIndexedValues(arr);
+        // System.out.println(PrintValuesInArray.sumEvenIndexedValues(arr););
 
         // 3. Find max value
         // int maxValue = PrintValuesInArray.findMaxValue(arr);

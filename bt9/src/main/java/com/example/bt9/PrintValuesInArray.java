@@ -7,13 +7,15 @@ public class PrintValuesInArray {
         }
     }
 
-    // print even-indexed values
-    public static void printEvenIndexedValues(int[] arr) {
+    // print sum of even-indexed values
+    public static int sumEvenIndexedValues(int[] arr) {
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             if (i % 2 == 0) {
-                System.out.println("Index: " + i + ", Value: " + arr[i]);
+                sum += arr[i];
             }
         }
+        return sum;
     }
 
     // find max value in array
