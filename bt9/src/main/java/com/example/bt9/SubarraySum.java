@@ -45,4 +45,17 @@ public class SubarraySum {
             System.out.println("Sum of subarray [" + (i-k+1) + "," + i + "]: " + windowSum);
         }
     }
+
+    //find max of all sum of all subarray with length k (A subarray is a contiguous non-empty sequence of elements within an array.)
+    public static int findMaxOfAllSubarraySums(int[] arr, int k) {
+        int maxSum = 0;
+        for (int i = 0; i < arr.length - k + 1; i++) {
+            int sum = 0;
+            for (int j = i; j < i + k; j++) {
+                sum += arr[j];
+            }
+            maxSum = Math.max(maxSum, sum);
+        }
+        return maxSum;
+    }
 }

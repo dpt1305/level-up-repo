@@ -19,20 +19,32 @@ public class Main {
         // 4. Find seond max value 
         // int[] arr = {12, 35, 1, 10, 34, 1};
         // int maxIndex = 1;  // index of 35, which is the maximum value
-        
         // int secondMaxIndex = FindMaxValueInArray.findSecondMaxIndex(arr, maxIndex);
         // System.out.println("Index of second maximum value: " + secondMaxIndex);  // Should print 4 (index of 34)
 
-        // 2. Subarray Sum
+        // 5. Find all subarray's Sum
         // int[] arr = {1, 2, 3, 4, 5, 6, 7};
         // int k = 3;
         // int start = 1;
-        // SubarraySum.findSubarraySums(arr, k, start);
+        // // SubarraySum.findSubarraySums(arr, k, start);
         // SubarraySum.findAllSubarraySums(arr, k);
 
-        // 3. Hashcode of integer
-        // Integer a = 2;
-        // System.out.println( Objects.hash(a));
+        // // 6. find max of all sum of all subarray with length k (A subarray is a contiguous non-empty sequence of elements within an array.)
+        // // int k = 3;
+        // int maxSum = SubarraySum.findMaxOfAllSubarraySums(arr, k);
+        // System.out.println("Max sum of all subarray with length " + k + ": " + maxSum);
+
+        // 7. Hashcode finding
+        // HashCodeSample hashCodeSample = new HashCodeSample();
+        // System.out.println(hashCodeSample.findIndexByValue(12));
+
+
+        // 8. iteration a linked list
+        // IterationLinkedList.iterationLinkedList();
+
+        // // 9. reverse a linked list
+        // IterationLinkedList.reverseLinkedList();
+
 
     }
 }
