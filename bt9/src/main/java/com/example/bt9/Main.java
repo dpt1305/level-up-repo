@@ -8,6 +8,7 @@ public class Main {
 
         // 1. Print index and value
         // PrintValuesInArray.printIndexValue(arr);
+        PrintValuesInArray.printIndexValueWithRecursive(arr, 0);
 
         // 2. Print even-indexed values
         // System.out.println(PrintValuesInArray.sumEvenIndexedValues(arr););

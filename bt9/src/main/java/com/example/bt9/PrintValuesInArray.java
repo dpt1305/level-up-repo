@@ -7,6 +7,19 @@ public class PrintValuesInArray {
         }
     }
 
+    public static void printIndexValueWithRecursive(int[] arr, int index) {
+        // for (int i = 0; i < arr.length; i++) {
+        //     System.out.println("Index: " + i + ", Value: " + arr[i]);
+        // }
+        if(index >= arr.length) {
+            System.out.println("out of array");
+            return ;
+        } else {
+            System.out.println("Index: " + index + ", Value: " + arr[index]);
+            printIndexValueWithRecursive(arr, index+1);
+        }
+    }
+
     // print sum of even-indexed values
     public static int sumEvenIndexedValues(int[] arr) {
         int sum = 0;

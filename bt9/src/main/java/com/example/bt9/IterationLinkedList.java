@@ -33,6 +33,17 @@ public class IterationLinkedList {
                 current = current.next;
             }
         }
+
+        public Node printWithRecursive(Node current)  {
+            if(current == null) {
+                System.out.println("Run out of this linked list.");
+                return null;
+            }
+
+            System.out.println(current.value);
+            return printWithRecursive(current.next);
+        }
+
         public void reverse() {
             Node current = root;
             Node prev = null;
@@ -63,6 +74,7 @@ public class IterationLinkedList {
     public static void iterationLinkedList() {
         LinkedList linkedList = createLinkedList();
         linkedList.print();
+        linkedList.printWithRecursive(linkedList.root);
     }
 
     // reverse a linked list
@@ -84,3 +96,4 @@ public class IterationLinkedList {
         return linkedList1;
     }
 }
+
