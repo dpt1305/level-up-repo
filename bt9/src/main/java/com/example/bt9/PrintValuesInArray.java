@@ -49,4 +49,23 @@ public class PrintValuesInArray {
         }
         return max;
     }
+    // 1 3 4 2 10 15 13 8
+    // find max value with recursive
+    public static int findMaxValueWithRecursive(int[] arr, int index) {
+        if(index >= arr.length) {
+            return 0;
+        } 
+        if(arr[index] > findMaxValueWithRecursive(arr, index+1) ) {
+            return arr[index];
+        } else {
+            return findMaxValueWithRecursive(arr, index+1);
+        }
+        // if(arr[index] > arr[index+1]) { 
+        //     return arr[index];
+        // } else {
+        //     return findMaxValueWithRecursive(arr, index+1);
+        // }
+
+        
+    }
 }

@@ -16,7 +16,8 @@ public class Main {
 
         // 3. Find max value
         // int maxValue = PrintValuesInArray.findMaxValue(arr);
-        // System.out.println("Max value: " + maxValue);
+        int maxValueWithRecursive = PrintValuesInArray.findMaxValueWithRecursive(arr, 0);
+        System.out.println("Max value: " + maxValueWithRecursive);
 
         // 4. Find seond max value 
         // int[] arr = {12, 35, 1, 10, 34, 1};
