@@ -15,6 +15,20 @@ public class FindMaxValueInArray {
         return secondMaxIndex;
     }
 
+
+    // 3 10 6 1 8 
+    public static int findSecondMaxValueWithRecursive(int[] arr, int index, int maxIndex) {
+        if(index >= arr.length ) {
+            return Integer.MIN_VALUE;
+        }
+        if(index != maxIndex && arr[index] > findSecondMaxValueWithRecursive(arr, index+1, maxIndex)) {
+            return arr[index];
+        } else {
+            return findSecondMaxValueWithRecursive(arr, index+1, maxIndex);
+        }
+
+    }
+
     public static int findMaxIndex(int[] arr) {
         if (arr == null || arr.length == 0) {
             return -1;  // Return -1 for empty or null array
