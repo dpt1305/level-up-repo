@@ -8,10 +8,11 @@ public class Main {
 
         // 1. Print index and value
         // PrintValuesInArray.printIndexValue(arr);
-        PrintValuesInArray.printIndexValueWithRecursive(arr, 0);
+        // PrintValuesInArray.printIndexValueWithRecursive(arr, 0);
 
         // 2. Print even-indexed values
-        // System.out.println(PrintValuesInArray.sumEvenIndexedValues(arr););
+        // System.out.println(PrintValuesInArray.sumEvenIndexedValues(arr));
+        // System.out.println(PrintValuesInArray.sumEvenIndexedValuesWithRecursive(arr, 0));
 
         // 3. Find max value
         // int maxValue = PrintValuesInArray.findMaxValue(arr);

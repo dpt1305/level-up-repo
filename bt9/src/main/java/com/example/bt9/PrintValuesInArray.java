@@ -30,6 +30,14 @@ public class PrintValuesInArray {
         }
         return sum;
     }
+    // print sum of even-indexed values with recursive
+    public static int sumEvenIndexedValuesWithRecursive(int[] arr, int index) {
+        if(index >= arr.length) {
+            return 0;
+        } else {
+            return arr[index] + sumEvenIndexedValuesWithRecursive(arr, index+2);
+        }
+    }
 
     // find max value in array
     public static int findMaxValue(int[] arr) {
