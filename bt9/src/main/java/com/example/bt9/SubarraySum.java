@@ -12,14 +12,18 @@ public class SubarraySum {
             return;
         }
         
-        // Calculate sum of first window of size k
-        int windowSum = 0;
-        for (int i = start; i < k; i++) {
-            windowSum += arr[i];
+        // Calculate sum of all subarrays starting from start index
+        int totalSum = 0;
+        for (int i = start; i <= arr.length - k; i++) {
+            int windowSum = 0;
+            for (int j = i; j < i + k; j++) {
+                windowSum += arr[j];
+            }
+            totalSum += windowSum;
+            System.out.println("Sum of subarray ["+ i + "," + (i+k-1) + "]: " + windowSum);
         }
         
-        // Print first subarray sum
-        System.out.println("Sum of subarray ["+ start + "," + (k-1) + "]: " + windowSum);
+        System.out.println("Total sum of all subarrays starting from index " + start + ": " + totalSum);
     }
 
     public static void findAllSubarraySums(int[] arr, int k) {

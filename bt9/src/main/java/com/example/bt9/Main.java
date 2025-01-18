@@ -20,17 +20,17 @@ public class Main {
         // System.out.println("Max value: " + maxValueWithRecursive);
 
         // 4. Find seond max value 
-        int maxIndex = 1;  // index of 35, which is the maximum value
+        // int maxIndex = 1;  // index of 35, which is the maximum value
         // int secondMaxIndex = FindMaxValueInArray.findSecondMaxIndex(arr, maxIndex);
         // System.out.println("Index of second maximum value: " + secondMaxIndex);  // Should print 4 (index of 34)
-        int secondMaxValueWithRecursive = FindMaxValueInArray.findSecondMaxValueWithRecursive(arr, 0, maxIndex);
-        System.out.println("Second max value: " + secondMaxValueWithRecursive);
+        // int secondMaxValueWithRecursive = FindMaxValueInArray.findSecondMaxValueWithRecursive(arr, 0, maxIndex);
+        // System.out.println("Second max value: " + secondMaxValueWithRecursive);
 
         // 5. Find all subarray's Sum
         // int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        // int k = 3;
-        // int start = 1;
-        // // SubarraySum.findSubarraySums(arr, k, start);
+        int k = 3;
+        int start = 1;
+        SubarraySum.findSubarraySums(arr, k, start);
         // SubarraySum.findAllSubarraySums(arr, k);
 
         // // 6. find max of all sum of all subarray with length k (A subarray is a contiguous non-empty sequence of elements within an array.)
