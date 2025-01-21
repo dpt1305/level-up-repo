@@ -40,21 +40,20 @@ public class Main {
         // // int k = 3;
         // int maxSum = SubarraySum.findMaxOfAllSubarraySums(arr, k);
         // System.out.println("Max sum of all subarray with length " + k + ": " + maxSum);
-        int maxSum = SubarraySum.findMaxOfAllSubarraySumsWithRecursive(arr, k, start);
-        System.out.println("Max sum of all subarray with length " + k + ": " + maxSum);
-
+        // int maxSum = SubarraySum.findMaxOfAllSubarraySumsWithRecursive(arr, k, start);
+        // System.out.println("Max sum of all subarray with length " + k + ": " + maxSum);
 
         // 7. Hashcode finding
         // HashCodeSample hashCodeSample = new HashCodeSample();
         // System.out.println(hashCodeSample.findIndexByValue(12));
-
+        
 
         // 8. iteration a linked list
         // IterationLinkedList.iterationLinkedList();
 
         // // 9. reverse a linked list
         // IterationLinkedList.reverseLinkedList();
-
+        IterationLinkedList.reverseLinkedListWithRecursive();
 
     }
 }

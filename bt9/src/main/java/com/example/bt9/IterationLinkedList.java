@@ -68,6 +68,18 @@ public class IterationLinkedList {
             // prev = 2, (1, null)
             // current = 3, 4
         }
+
+        public void reverseWithRecursive(Node current, Node prev, Node next) {
+            if(current == null) {
+                return;
+            }
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+            root = prev;
+            reverseWithRecursive(current, prev, next);
+        }
     }
 
     // iteration a linked list
@@ -85,6 +97,16 @@ public class IterationLinkedList {
         System.out.println("Reversed linked list:");
         linkedList.reverse();
         linkedList.print();
+    }
+
+    // reverse a linked list with recursive
+    public static void reverseLinkedListWithRecursive() {
+        LinkedList linkedList = createLinkedList();
+        linkedList.printWithRecursive(linkedList.root);
+
+        System.out.println("Reversed linked list:");
+        linkedList.reverseWithRecursive(linkedList.root, null, null);
+        linkedList.printWithRecursive(linkedList.root);
     }
 
     public static LinkedList createLinkedList() {
