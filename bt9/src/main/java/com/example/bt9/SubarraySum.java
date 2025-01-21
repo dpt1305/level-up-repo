@@ -26,6 +26,33 @@ public class SubarraySum {
         System.out.println("Total sum of all subarrays starting from index " + start + ": " + totalSum);
     }
 
+    /**
+     * 1 2 3 4 5 6 7 8 9 10
+     * k = 3
+     * 123 -> 6
+     * 234 -> 9
+     * 345 -> 12
+     * 456 -> 15
+     * 567 -> 18
+     * 678 -> 21
+     * 789 -> 24
+     * 8910 -> 27
+     */
+    public static int findSumOfSubarrayWithRecursive(int[] arr, int start, int k) {
+        if(k <= 0 || start >= arr.length || start < 0 || k > arr.length) {
+            return 0;
+        }
+        int sumOfWindow = calculateSumInWindow(arr, start, k);
+        return sumOfWindow + findSumOfSubarrayWithRecursive(arr, start+1, k);
+    }
+
+    public static int calculateSumInWindow(int[] arr, int start, int k) {
+        if(k == 0 || start >= arr.length || start < 0 || k > arr.length || (start + k) > arr.length) {
+            return 0;
+        }
+        return arr[start] + calculateSumInWindow(arr, start+1, k-1);
+    }
+
     public static void findAllSubarraySums(int[] arr, int k) {
         // Check if array length is less than k
         if (arr.length < k) {

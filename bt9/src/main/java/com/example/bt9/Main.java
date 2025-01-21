@@ -32,7 +32,8 @@ public class Main {
         int start = 1;
         SubarraySum.findSubarraySums(arr, k, start);
         // SubarraySum.findAllSubarraySums(arr, k);
-
+        System.out.println(SubarraySum.findSumOfSubarrayWithRecursive(arr, start, k));
+        
         // // 6. find max of all sum of all subarray with length k (A subarray is a contiguous non-empty sequence of elements within an array.)
         // // int k = 3;
         // int maxSum = SubarraySum.findMaxOfAllSubarraySums(arr, k);
