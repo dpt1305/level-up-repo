@@ -89,4 +89,13 @@ public class SubarraySum {
         }
         return maxSum;
     }
+
+    // find max of all sum of subarray with length k recursively
+    public static int findMaxOfAllSubarraySumsWithRecursive(int[] arr, int k, int start) {
+        if(k <= 0 || start >= arr.length || start < 0 || k > arr.length || (start + k) > arr.length) {
+            return 0;
+        }
+        int sumOfWindow = calculateSumInWindow(arr, start, k);
+        return Math.max(sumOfWindow, findMaxOfAllSubarraySumsWithRecursive(arr, k, start+1));
+    }
 }

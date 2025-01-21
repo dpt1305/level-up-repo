@@ -5,6 +5,8 @@ package com.example.bt9;
 public class Main {
     public static void main(String[] args) {
         int[] arr = {12, 35, 1, 10, 34, 1};
+        int k = 3;
+        int start = 0;
 
         // 1. Print index and value
         // PrintValuesInArray.printIndexValue(arr);
@@ -28,16 +30,19 @@ public class Main {
 
         // 5. Find all subarray's Sum
         // int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        int k = 3;
-        int start = 1;
-        SubarraySum.findSubarraySums(arr, k, start);
-        // SubarraySum.findAllSubarraySums(arr, k);
-        System.out.println(SubarraySum.findSumOfSubarrayWithRecursive(arr, start, k));
+        // int k = 3;
+        // int start = 1;
+        // SubarraySum.findSubarraySums(arr, k, start);
+        // // SubarraySum.findAllSubarraySums(arr, k);
+        // System.out.println(SubarraySum.findSumOfSubarrayWithRecursive(arr, start, k));
         
-        // // 6. find max of all sum of all subarray with length k (A subarray is a contiguous non-empty sequence of elements within an array.)
+        // 6. find max of all sum of all subarray with length k (A subarray is a contiguous non-empty sequence of elements within an array.)
         // // int k = 3;
         // int maxSum = SubarraySum.findMaxOfAllSubarraySums(arr, k);
         // System.out.println("Max sum of all subarray with length " + k + ": " + maxSum);
+        int maxSum = SubarraySum.findMaxOfAllSubarraySumsWithRecursive(arr, k, start);
+        System.out.println("Max sum of all subarray with length " + k + ": " + maxSum);
+
 
         // 7. Hashcode finding
         // HashCodeSample hashCodeSample = new HashCodeSample();
